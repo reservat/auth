@@ -19,6 +19,6 @@ class AdminRepository extends BasicPDORepository implements BasicPDORepositoryIn
 
     public function identifiers()
     {
-    	return ['username', 'email'];
+        return ['username', 'email'];
     }
 }

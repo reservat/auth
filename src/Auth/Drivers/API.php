@@ -6,5 +6,5 @@ use Reservat\Auth\Interfaces\DriverInterface;
 
 class Api implements DriverInterface
 {
-	
+    
 }

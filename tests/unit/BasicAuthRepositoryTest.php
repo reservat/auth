@@ -44,22 +44,22 @@ SQL;
             [
                 'username' => 'abc',
                 'email' => 'paul@example.com',
-                'password' => 'test'                
+                'password' => \Reservat\Admin::hash('test')
             ],
             [
                 'username' => 'test1',
                 'email' => 'paul2@example.com',
-                'password' => ':poop:'                
+                'password' => \Reservat\Admin::hash(':poop:')
             ],
             [
                 'username' => 'test2',
                 'email' => 'paul3@example.com',
-                'password' => 'cake'                
+                'password' => \Reservat\Admin::hash('cake')
             ],
         ];
 
-        foreach($admins as $admin){
-            $admin = \Reservat\Test\Admin::create($admin);
+        foreach ($admins as $admin) {
+            $admin = \Reservat\Admin::create($admin);
             $this->mapper->insert($admin);
         }
 
@@ -76,6 +76,4 @@ SQL;
         $res = $this->repo->getByAuthIdentifiers('paul@example.com');
         $this->assertEquals('abc', $res->current()['username']);
     }
-
-
 }

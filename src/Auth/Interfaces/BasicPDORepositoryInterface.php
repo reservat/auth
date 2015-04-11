@@ -4,5 +4,5 @@ namespace Reservat\Auth\Interfaces;
 
 interface BasicPDORepositoryInterface
 {
-	public function identifiers();
+    public function identifiers();
 }

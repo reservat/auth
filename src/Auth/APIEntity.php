@@ -7,11 +7,10 @@ use Reservat\Auth\Interfaces\APIEntityInterface;
 class APIEntity implements APIEntityInterface
 {
 
-	protected $apiKeys;
+    protected $apiKeys;
 
-	public function getActiveApiKey()
-	{
-		
-	}
-
+    public function getActiveApiKey()
+    {
+        
+    }
 }

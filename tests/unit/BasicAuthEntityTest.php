@@ -15,7 +15,7 @@ class BasicAuthEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testBasicEntity()
     {
-        $admin = \Reservat\Test\Admin::create([
+        $admin = \Reservat\Admin::create([
             'username' => 'PWesterdale',
             'email' => 'paul@westerdale.me',
             'password' => 'cake'
@@ -23,6 +23,4 @@ class BasicAuthEntityTest extends \PHPUnit_Framework_TestCase
 
         $this->assertEquals($admin->verify('cake'), true);
     }
-
-
 }

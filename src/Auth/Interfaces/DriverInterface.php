@@ -4,5 +4,5 @@ namespace Reservat\Auth\Interfaces;
 
 interface DriverInterface
 {
-	public function check($data);
+    public function login(array $data);
 }
