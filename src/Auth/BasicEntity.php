@@ -15,7 +15,7 @@ abstract class BasicEntity extends Entity implements BasicEntityInterface
         return password_hash($password, PASSWORD_DEFAULT);
     }
 
-    public function setPasswordWithHash($password)
+    public function setHashedPassword($password)
     {
         $this->password = static::hash($password);
     }

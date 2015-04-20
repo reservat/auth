@@ -7,6 +7,9 @@ use Reservat\Auth\Interfaces\BasicPDORepositoryInterface;
 
 class AdminRepository extends BasicPDORepository implements BasicPDORepositoryInterface
 {
+
+    public static $fillable = array('api_key' => 'apiKey');
+
     /**
      * Return a the table name.
      *

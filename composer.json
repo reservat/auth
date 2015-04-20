@@ -1,7 +1,7 @@
 {
     "require": {
         "reservat/core": "dev-master",
-        "aura/di": "~2.2"
+        "reservat/session": "dev-master"
     },
     "autoload": {
         "psr-4": {

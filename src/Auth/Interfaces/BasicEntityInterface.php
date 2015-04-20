@@ -4,5 +4,5 @@ namespace Reservat\Auth\Interfaces;
 
 interface BasicEntityInterface
 {
-    public function setPasswordWithHash($password);
+    public function setHashedPassword($password);
 }

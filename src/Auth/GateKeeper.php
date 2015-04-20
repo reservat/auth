@@ -5,32 +5,48 @@ namespace Reservat\Auth;
 class GateKeeper
 {
    
-
     protected $activeDrivers = [];
 
-    public function __construct($di, $entityName, $driver)
+    public function __construct($di, $manager, $driver)
     {
+        
+        $driverClass = '\Reservat\Auth\Drivers\\'.$driver;
 
-        if (!in_array('Reservat\Auth\Interfaces\\' . $driver . 'EntityInterface', class_implements('\Reservat\\' . $entityName))) {
-            throw new \InvalidArgumentException('Entity '. $entityName . ' does not implement its associated entity interface');
-        }
-        if (!class_exists('\Reservat\Auth\Drivers\\' . $driver)) {
+        if (!class_exists($driverClass)) {
             throw new \InvalidDriverException('Driver ' . $driver . ' does not exist');
         }
 
         if (!isset($this->activeDrivers[$driver])) {
-            $driver = '\Reservat\Auth\Drivers\\'.$driver;
-            $this->activeDrivers[$driver] = new $driver($di, $entityName);
+            $this->activeDrivers[$driver] = new $driverClass($di, $manager);
         }
 
+    }
+
+    public function getDriver($driverName)
+    {
+        return $this->activeDrivers[$driverName];
     }
 
     public function login($data)
     {
         $results = [];
-        foreach ($this->activeDrivers as $driver) {
-            $results[(new \ReflectionClass($driver))->getShortName()] = $driver->login($data);
+
+        foreach ($this->activeDrivers as $key => $driver) {
+            $results[$key] = $driver->login($data);
         }
+
+        return $results;
+
+    }
+
+    public function check($data = array())
+    {
+        $results = [];
+
+        foreach ($this->activeDrivers as $key => $driver) {
+            $results[$key] = $driver->check($data);
+        }
+
         return $results;
     }
 }

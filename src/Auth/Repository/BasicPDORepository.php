@@ -7,6 +7,17 @@ use Reservat\Core\Repository\PDORepository;
 abstract class BasicPDORepository extends PDORepository
 {
 
+    public function getByAPIKey($key)
+    {
+        $data = $this->query(array('api_key' => $key), 1);
+
+        if ($data->execute(array($key))) {
+            $this->records[] = $data->fetch(\PDO::FETCH_ASSOC);
+        }
+
+        return $this;
+    }
+
     public function getByAuthIdentifiers($username)
     {
         $checkArray = [];
@@ -15,9 +26,10 @@ abstract class BasicPDORepository extends PDORepository
         }
 
         $data = $this->orQuery($checkArray, 1);
+        $this->records = [];
 
-        if ($data->execute(array_values($checkArray))) {
-            $this->records[] = $data->fetch(\PDO::FETCH_ASSOC);
+        if ($data->execute(array_values($checkArray)) && $results = $data->fetch(\PDO::FETCH_ASSOC)) {
+            $this->records[] = $results;
         }
 
         return $this;
