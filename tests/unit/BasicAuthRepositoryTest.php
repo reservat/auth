@@ -20,7 +20,8 @@ class BasicAuthRepositoryTest extends \PHPUnit_Framework_TestCase
         "id" INTEGER PRIMARY KEY,
         "username" VARCHAR NOT NULL,
         "password" VARCHAR NOT NULL,
-        "email" VARCHAR NOT NULL
+        "email" VARCHAR NOT NULL,
+        "api_key" VARCHAR NOT NULL
         );
 SQL;
 
@@ -45,22 +46,25 @@ SQL;
             [
                 'username' => 'abc',
                 'email' => 'paul@example.com',
-                'password' => \Reservat\Admin::hash('test')
+                'password' => \Reservat\Admin::hash('test'),
+                'api_key' => '1234567890'
             ],
             [
                 'username' => 'test1',
                 'email' => 'paul2@example.com',
-                'password' => \Reservat\Admin::hash(':poop:')
+                'password' => \Reservat\Admin::hash(':poop:'),
+                'api_key' => '1277777890'
             ],
             [
                 'username' => 'test2',
                 'email' => 'paul3@example.com',
-                'password' => \Reservat\Admin::hash('cake')
+                'password' => \Reservat\Admin::hash('cake'),
+                'api_key' => '1234444456'
             ],
         ];
 
         foreach ($admins as $admin) {
-            $admin = \Reservat\Admin::create($admin, $this->manager->getRepository());
+            $admin = \Reservat\Admin::createFromArray($admin);
             $this->manager->getDatamapper()->insert($admin);
         }
 

@@ -25,8 +25,8 @@ class AdminManager implements ManagerInterface
         return $this->datamapper;
     }
 
-    public function getEntity(...$args)
+    public function getEntity($args)
     {
-        return new Admin(...$args);
+        return Admin::createFromArray($args);
     }
 }
