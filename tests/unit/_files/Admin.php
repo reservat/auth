@@ -10,12 +10,17 @@ class Admin extends \Reservat\Auth\BasicEntity implements \Reservat\Core\Interfa
     protected $password;
     protected $apiKey;
 
-    public function __construct(...$params)
+    public function __construct($username, $email, $password, $apiKey)
     {
-        $this->username = isset($params[0]) ? $params[0] : null;
-        $this->email = isset($params[1]) ? $params[1] : null;
-        $this->password = isset($params[2]) ? $params[2] : null;
-        $this->apiKey = isset($params[3]) ? $params[3] : null;
+        $this->username = $username;
+        $this->email = $email;
+        $this->password = $password;
+        $this->apiKey = $apiKey;
+    }
+
+    public static function createFromArray(array $data)
+    {
+        return new static($data['username'], $data['email'], $data['password'], $data['api_key']);
     }
 
     public function toArray()

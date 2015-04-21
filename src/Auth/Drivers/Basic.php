@@ -31,11 +31,13 @@ class Basic implements DriverInterface
 
         $this->repo->getByAuthIdentifiers($data['username']);
 
-        $user = $this->repo->getResults($this->manager->getEntity());
+        $user = $this->repo->getResults();
 
         if (!$user) {
             return false;
         }
+
+        $user = $this->manager->getEntity($user);
 
         $loggedIn = $user->verify($data['password']);
 
@@ -58,7 +60,13 @@ class Basic implements DriverInterface
             return false;
         }
 
-        $this->user = $this->repo->getById($userId)->getResults($this->manager->getEntity());
+        $user = $this->repo->getById($userId)->getResults();
+
+        if (!$user) {
+            return false;
+        }
+
+        $this->user = $this->manager->getEntity($user);
 
         return $this;
 

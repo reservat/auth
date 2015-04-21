@@ -99,7 +99,7 @@ SQL;
         ];
 
         foreach ($admins as $admin) {
-            $admin = \Reservat\Admin::create($admin, $this->manager->getRepository());
+            $admin = \Reservat\Admin::createFromArray($admin);
             $this->manager->getDatamapper()->insert($admin);
         }
 

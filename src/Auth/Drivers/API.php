@@ -31,7 +31,13 @@ class Api implements DriverInterface
             throw new \InvalidArgumentException('You must provide an API key to '. get_class() . ' login/check function');
         }
 
-        $this->user = $this->repo->getByAPIKey($data['apiKey'])->getResults($this->manager->getEntity());
+        $user = $this->repo->getByAPIKey($data['apiKey'])->getResults();
+
+        if (!$user) {
+            return false;
+        }
+
+        $this->user = $this->manager->getEntity($user);
 
         return $this;
 

@@ -28,8 +28,12 @@ class BasicAuthEntityTest extends \PHPUnit_Framework_TestCase
 
     public function testBasicEntity()
     {
-        $admin = $this->manager->getEntity('PWesterdale', 'paul@westerdale.me');
-        $admin->setHashedPassword('cake');
+        $admin = $this->manager->getEntity([
+            'username' => 'PWesterdale',
+            'email' => 'paul@westerdale.me',
+            'password' => \Reservat\Admin::hash('cake'),
+            'api_key' => '012345678'
+        ]);
 
         $this->assertEquals($admin->verify('cake'), true);
     }
