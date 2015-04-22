@@ -7,6 +7,58 @@
     "hash": "335ebe7ef21012e53e3e95bf26a5733f",
     "packages": [
         {
+            "name": "aura/di",
+            "version": "2.2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/auraphp/Aura.Di.git",
+                "reference": "28d96debd6af6360411a3fbe4088d458eb01d4d1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/auraphp/Aura.Di/zipball/28d96debd6af6360411a3fbe4088d458eb01d4d1",
+                "reference": "28d96debd6af6360411a3fbe4088d458eb01d4d1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "extra": {
+                "aura": {
+                    "type": "library"
+                },
+                "branch-alias": {
+                    "dev-develop-2": "2.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Aura\\Di\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Aura.Di Contributors",
+                    "homepage": "https://github.com/auraphp/Aura.Di/contributors"
+                }
+            ],
+            "description": "Provides a dependency injection container system with native support for constructor- and setter-based injection, lazy-loading of services, and inheritable configuration of setters and constructor params.",
+            "homepage": "https://github.com/auraphp/Aura.Di",
+            "keywords": [
+                "container",
+                "dependency injection",
+                "dependency injection container",
+                "di",
+                "di container"
+            ],
+            "time": "2015-03-26 21:57:56"
+        },
+        {
             "name": "elasticsearch/elasticsearch",
             "version": "v1.3.4",
             "source": {
@@ -319,15 +371,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reservat/core.git",
-                "reference": "c5fac9c78a33ffc71094a1e5cc6a18cfa7d9fb39"
+                "reference": "cfae995a66c3296336ffedaeb55500b48005f252"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reservat/core/zipball/c5fac9c78a33ffc71094a1e5cc6a18cfa7d9fb39",
-                "reference": "c5fac9c78a33ffc71094a1e5cc6a18cfa7d9fb39",
+                "url": "https://api.github.com/repos/reservat/core/zipball/cfae995a66c3296336ffedaeb55500b48005f252",
+                "reference": "cfae995a66c3296336ffedaeb55500b48005f252",
                 "shasum": ""
             },
             "require": {
+                "aura/di": "~2.0",
                 "elasticsearch/elasticsearch": "~1.0",
                 "monolog/monolog": "~1.0",
                 "vlucas/phpdotenv": "~1.1"
@@ -357,7 +410,7 @@
                 }
             ],
             "description": "Reservat Core Interfaces",
-            "time": "2015-04-06 11:29:23"
+            "time": "2015-04-21 16:09:21"
         },
         {
             "name": "reservat/session",
@@ -365,12 +418,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/reservat/session.git",
-                "reference": "19975f697d6a547bc052a18fa1f0d5f1503d1f8d"
+                "reference": "e1a6294f2bdc349d8238b354aacec2637edbc2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reservat/session/zipball/19975f697d6a547bc052a18fa1f0d5f1503d1f8d",
-                "reference": "19975f697d6a547bc052a18fa1f0d5f1503d1f8d",
+                "url": "https://api.github.com/repos/reservat/session/zipball/e1a6294f2bdc349d8238b354aacec2637edbc2ba",
+                "reference": "e1a6294f2bdc349d8238b354aacec2637edbc2ba",
                 "shasum": ""
             },
             "require": {
@@ -402,7 +455,7 @@
                 }
             ],
             "description": "Session management for Reservat",
-            "time": "2015-04-18 12:45:18"
+            "time": "2015-04-22 09:39:22"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -516,58 +569,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "aura/di",
-            "version": "2.2.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/auraphp/Aura.Di.git",
-                "reference": "28d96debd6af6360411a3fbe4088d458eb01d4d1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/auraphp/Aura.Di/zipball/28d96debd6af6360411a3fbe4088d458eb01d4d1",
-                "reference": "28d96debd6af6360411a3fbe4088d458eb01d4d1",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "extra": {
-                "aura": {
-                    "type": "library"
-                },
-                "branch-alias": {
-                    "dev-develop-2": "2.0.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Aura\\Di\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Aura.Di Contributors",
-                    "homepage": "https://github.com/auraphp/Aura.Di/contributors"
-                }
-            ],
-            "description": "Provides a dependency injection container system with native support for constructor- and setter-based injection, lazy-loading of services, and inheritable configuration of setters and constructor params.",
-            "homepage": "https://github.com/auraphp/Aura.Di",
-            "keywords": [
-                "container",
-                "dependency injection",
-                "dependency injection container",
-                "di",
-                "di container"
-            ],
-            "time": "2015-03-26 21:57:56"
-        },
         {
             "name": "doctrine/instantiator",
             "version": "1.0.4",
@@ -733,16 +734,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "2.0.15",
+            "version": "2.0.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67"
+                "reference": "934fd03eb6840508231a7f73eb8940cf32c3b66c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/34cc484af1ca149188d0d9e91412191e398e0b67",
-                "reference": "34cc484af1ca149188d0d9e91412191e398e0b67",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/934fd03eb6840508231a7f73eb8940cf32c3b66c",
+                "reference": "934fd03eb6840508231a7f73eb8940cf32c3b66c",
                 "shasum": ""
             },
             "require": {
@@ -791,7 +792,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-01-24 10:06:35"
+            "time": "2015-04-11 04:35:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -1479,12 +1480,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "3d598e3b71749a0d32ce8cdeb2c033caab2ee215"
+                "reference": "76853c5707775b17d68c8878a3672c952692ea30"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/3d598e3b71749a0d32ce8cdeb2c033caab2ee215",
-                "reference": "3d598e3b71749a0d32ce8cdeb2c033caab2ee215",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/76853c5707775b17d68c8878a3672c952692ea30",
+                "reference": "76853c5707775b17d68c8878a3672c952692ea30",
                 "shasum": ""
             },
             "require": {
@@ -1545,7 +1546,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2015-04-08 22:37:08"
+            "time": "2015-04-21 05:31:04"
         },
         {
             "name": "symfony/yaml",
