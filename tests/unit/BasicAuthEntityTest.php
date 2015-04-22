@@ -15,7 +15,7 @@ class BasicAuthEntityTest extends \PHPUnit_Framework_TestCase
     {
         require_once(__DIR__.'/_files/Admin.php');
         require_once(__DIR__.'/_files/AdminRepository.php');
-        require_once(__DIR__.'/_files/AdminDataMapper.php');
+        require_once(__DIR__.'/_files/AdminDatamapper.php');
         require_once(__DIR__.'/_files/AdminManager.php');
 
         $this->di = new Container(new Factory);
