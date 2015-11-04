@@ -1,4 +1,18 @@
 {
+    "name": "reservat/auth",
+    "description": "auth management for Reservat",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Steadman",
+            "email": "luke@steadweb.co.uk"
+        },
+        {
+            "name": "Paul Westerdale",
+            "email": "paul@threadstud.io"
+        }
+    ],
+    "minimum-stability": "dev",
     "require": {
         "reservat/core": "dev-master",
         "reservat/session": "dev-master"
